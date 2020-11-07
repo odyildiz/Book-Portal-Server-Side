@@ -26,9 +26,14 @@ public class AuthorService {
     }
 
     public Author updateAuthor(Long id, String name){
-        Author author = authorRepository.findById(id).get();
-        author.setName(name);
-        return authorRepository.save(author);
+        Optional<Author> author = authorRepository.findById(id);
+
+        if (author.isPresent()){
+            author.get().setName(name);
+            return authorRepository.save(author.get());
+        }
+
+        throw new IllegalArgumentException("Couldn't find specified author");
     }
 
     public List<Author> getAllAuthors(String name){
