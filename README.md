@@ -8,4 +8,4 @@ This is a Spring Boot project for Book Portal application. Front-End part is not
 * Lombok
 
 ## Before You Start
-Make sure you've changed "datasource" part in "application-dev.yml" according to your own database.
+Make sure you've changed *datasource* part in *application-dev.yml* according to your own database.
